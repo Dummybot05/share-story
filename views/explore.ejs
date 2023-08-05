@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Share-story</title>
+    <style>
+* {
+     margin:0;
+     padding:0;
+     font-family:Helvetica;
+ }
+body {
+    
+}
+h1 {
+    text-align:center;
+    margin:10px 0;
+}
+input {
+    width:90%;
+    margin:10px 5%;
+    padding:10px 3%;
+    outline:none;
+}
+button {
+    width:90%;
+    margin:0px 5%;
+    font-size:20px;
+    background-color:#55dd55;
+    padding:5px 0%;
+    font-weight:700;
+    border-radius:4px;
+    border:2px solid green;
+    color:white;
+}
+h2, p, small {
+    width:86%;
+    padding:2px 2%;
+    margin:0px 5%;
+    background-color:#e2e2e2;
+}
+#obb {
+    background-color:#e2e2e2;
+    padding:10px 0;
+    width:90%;
+    margin:20px 5%;
+    border:2px solid grey;
+    border-radius:6px;
+}
+p {
+    font-size:14px;
+}
+small {
+    color:grey;
+    font-size:10px;
+}
+footer {
+    text-align:center;
+    background-color:black;
+    color:white;
+    padding:20px 0%;
+}
+a {
+    text-decoration:none;
+    color: black;
+}
+    </style>
+  </head>
+  <body>
+    <h1>Share Story</h1>
+   <form method="POST" action="/search">
+    <input type="search" placeholder="Search story" name="searchItem" />
+    <button type="submit">Search</button>
+   </form>
+<% for (const file of data1) { %>
+<a href="stories?id=<%= file %>">
+    <div id="obb">
+<% if(file.length >= 26) { %>
+    <h2><%= file.slice(0,24)+"..." %></h2>
+<% } else { %>
+    <h2><%= file %></h2>
+<% } %>
+    <p><%= desp1 %><span style="color:#55d;">Click to readmore &gt;</span>
+    </div>
+</a>
+<% } %>
+<footer>
+      <b>share story</b>  copyright ©2023-2024
+    </footer>
+  </body>
+</html>
+
