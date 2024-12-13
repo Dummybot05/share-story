@@ -4,10 +4,14 @@ const cors = require('cors');
 const app = express();
 const { v4: uuidV4 } = require('uuid');
 const path = require('path');
+const dotenv = require('dotenv');
+dotenv.config();
+
 app.set('view engine', 'ejs')
 app.use(express.static(path.join(__dirname,'public')));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
+
 
 function getAllDate(options) {
   const now = new Date();
@@ -21,8 +25,7 @@ function getAllDate(options) {
 }
 
 const { neon } = require("@neondatabase/serverless");
-const sql = neon("postgresql://neondb_owner:Vc54HDEThSbO@ep-patient-snowflake-a5fit1hb.us-east-2.aws.neon.tech/neondb?sslmode=require");
-
+const sql = neon(process.env.DATABASE)
 app.get("/", (req, res) => {
     res.render("index");
 })

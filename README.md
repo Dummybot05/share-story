@@ -1,5 +1,5 @@
 # share-story
-It is an sharing your stories in public
+It is a public story sharing site
 
 live
 https://share-story.onrender.com
