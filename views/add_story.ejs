@@ -1,126 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Share-story</title>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share Story</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-* {
-     margin:0;
-     padding:0;
-     font-family:Helvetica;
- }
-body {
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
 
-}
-h1 {
-    text-align:center;
-    margin:10px 0;
-}
-h2 {
-    text-align:center;
-    margin:20px 0;
-    color:#55dd55;
-}
-p {
-    width:86%;
-    padding:10px 2%;
-    margin:10px 5%;
-    background-color:#f1f1f1;
-    letter-spacing:1px;
-    text-align:center;
-}
-footer {
-    text-align:center;
-    background-color:black;
-    color:white;
-    padding:20px 0%;
-}
-#img-center {
-    width:100%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-input {
-    width:83%;
-    margin:1px 5% 10px 5%;
-    padding:10px 3%;
-    outline:none;
-    background-color:#f1f1f1;
-    border:0.4px solid grey;
-    border-bottom:2px solid grey;
-}
-textarea {
-    width:86%;
-    margin:10px 5%;
-    padding:10px 2%;
-    outline:none;
-    height:100px;
-    border:0.4px solid grey;
-    border-bottom:4px solid grey;
-}
-textarea:hover {
-    border:0.4px solid #55dd55;
-    border-bottom:4px solid #55dd55;
-}
-input:hover {
-    border:0.4px solid #55dd55;
-    border-bottom:2px solid #55dd55;
-}
-button {
-    width:90%;
-    margin:20px 5%;
-    font-size:20px;
-    background-color:#55dd55;
-    padding:10px 0%;
-    font-weight:700;
-    border-radius:4px;
-    border:2px solid green;
-    color:white;
-}
-label {
-    width:90%;
-    margin:2px 5% 4px 5%;
-}
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        /* Header */
+        h1 {
+            color: #55dd55;
+            text-align: center;
+            padding: 10px 0;
+            animation: slideInFromTop 1s ease-in-out;
+            font-size: 3em;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        /* Form Styling */
+        form {
+            background-color: white;
+            padding: 40px;
+            margin: 0 auto;
+            width: 80%;
+            max-width: 700px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        form label {
+            font-size: 1.1em;
+            margin-bottom: 8px;
+            display: block;
+            color: #333;
+        }
+
+        form input,
+        form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 2px solid #ccc;
+            border-radius: 6px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        textarea {
+            height: 240px;
+        }
+
+        form input:focus,
+        form textarea:focus {
+            border-color: #55dd55;
+            outline: none;
+        }
+
+        form button {
+            width: 100%;
+            background-color: #55dd55;
+            color: white;
+            font-size: 1.2em;
+            padding: 15px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        form button:hover {
+            background-color: #4ebd4e;
+        }
+
+        /* Image Upload Styling */
+        #img-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #img-center input {
+            margin-top: 10px;
+            font-size: 1em;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            margin-top: 40px;
+            font-size: 1em;
+        }
+
+        footer b {
+            color: #55dd55;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            padding-left: 5px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Keyframe Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInFromTop {
+            0% {
+                transform: translateY(-50px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        #sub-text {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
     </style>
-  </head>
-  <body>
+</head>
+
+<body>
+
     <h1>Share Story</h1>
-    <h2>Share your story</h2>
-<form action="/newstory" method="POST" enctype="multipart/form-data">
-<label>Title of a story</label>
-<input name="title1" type="text" placeholder="Enter Title" required />
+    <h2 id="sub-text">Share your really happened story</h2>
 
-<p>
-<label>Enter 1st paragraph here</label>
-<textarea name="para1" placeholder="paragraph 1" required ></textarea>
-</p>
+    <form action="/newstory" method="POST">
+        <label for="title">Title of a story</label>
+        <input name="title" type="text" placeholder="Enter Title" id="title" required />
+        <label for="para">Write your story</label>
+        <textarea name="para" placeholder="Write your story here" id="para" required></textarea>
+        <label for="imgs">Any images (url only)</label>
+        <input name="img1" type="text" placeholder="Enter Picture Url 1" id="img1" required />
+        <input name="img2" type="text" placeholder="Enter Picture Url 2" id="img2" required />
+        <button type="submit">Share Story</button>
+    </form>
 
-<p>
-<label>Enter 2nd paragraph here</label>
-<textarea name="para2" placeholder="paragraph 2" required ></textarea>
-</p>
+    <footer>
+        <p>
+            <b>Share Story</b> &copy; 2023-2024. <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+        </p>
+    </footer>
 
-<p>
-<label>Enter 3rd paragraph here</label>
-<textarea name="para3" placeholder="paragraph 3" required ></textarea>
-</p>
+</body>
 
-<label>Choose image-1</label>
-<div id="img-center">
-   <input name="img1" type="file" required />
-</div>
-
-<label>Choose image-2</label>
-<div id="img-center">
-    <input name="img2" type="file" required />
-</div>
-
-<button type="submit">Submit</button>
-</form>
-<footer>
-   <b>share story</b>  copyright ©2023-2024
-</footer>
-  </body>
 </html>

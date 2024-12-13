@@ -1,99 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Share-story</title>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share Story</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-* {
-    margin:0;
-    padding:0;
-    font-family:Helvetica;
-}
-h1 {
-    text-align:center;
-    margin:20px auto;
-}
-p {
-    width:86%;
-    padding:30px 2%;
-    margin:10px 5%;
-    background-color:#f1f1f1;
-    letter-spacing:1px;
-    text-align:center;
-}
-#col {
-    background-color:#5555dd;
-    border:2px solid blue;
-}
-button {
-    width:90%;
-    margin:10px 5%;
-    font-size:20px;
-    background-color:#55dd55;
-    padding:5px 0%;
-    font-weight:700;
-    border-radius:4px;
-    border:2px solid green;
-    color:white;
-}
-footer {
-    text-align:center;
-    background-color:black;
-    color:white;
-    padding:20px 0%;
-}
-a {
-    text-decoration:none;
-    color:white;
-}
-#img-center {
-    width:100%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h1 {
+            color: #55dd55;
+            text-align: center;
+            padding: 10px 0;
+            animation: slideInFromTop 1s ease-in-out;
+            font-size: 3em;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .button-group button {
+            background-color: #f1f1f1;
+            color: #010101;
+            font-size: 1.2em;
+            padding: 15px 30px;
+            border: 2px solid #a4a4a4;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .button-group button:hover {
+            background-color: #4ebd4e;
+            color: #fff;
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            margin-top: 40px;
+            font-size: 1em;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        footer b {
+            color: #55dd55;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            padding-left: 5px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            width: 70%;
+            margin: 50px 15%;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            animation: fadeIn 1.5s ease-in-out;
+            display: flex;
+            padding: 20px;
+        }
+
+        .container p {
+            height: 300px;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+
+        .container img {
+            max-width: 80%;
+            height: auto;
+            max-height: 300px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            transform: scale(0.95);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .container img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Keyframe Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInFromTop {
+            0% {
+                transform: translateY(-50px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        hr {
+            width: 80%;
+            height: 2px;
+            margin-left: 10%;
+            background-color: #aeaeae;
+            border: 0;
+        }
     </style>
-  </head>
-  <body>
+</head>
+
+<body>
+
     <h1>Share Story</h1>
-    <button id="col"><a href="explore">Explore</a></button>
-    <button><a href="add_story">Add your Story</a></button>
-    <p>
-"Share-Story" is an innovative tech company with a mission to revolutionize the way people connect and share their stories with the world. They have developed a cutting-edge platform that empowers individuals to express themselves, create meaningful connections, and leave a lasting impact through storytelling.
-</p>
-<p>
-At the heart of Share-Story's platform is a user-friendly mobile app and website, designed to cater to a diverse range of storytellers - from aspiring writers and photographers to seasoned bloggers and artists. The app allows users to craft and share their stories using various media formats, including text, images, audio, and videos, making it a dynamic and immersive storytelling experience.
-</p>
-<div id="img-center">
-<img width="300" src="1690729018063.jpg" />
-</div>
-<p>
-Through the Share-Story platform, users can join thematic communities based on their interests, passions, and experiences. These communities serve as interactive hubs where like-minded individuals can engage with each other's stories, provide feedback, and collaborate on creative projects.
-</p>
-<p>
-One of the platform's standout features is the "Story Challenges." Share-Story regularly hosts global storytelling challenges, inviting users to participate and unleash their creativity on a specific theme or topic. These challenges not only spark creativity but also foster a sense of camaraderie among the storytellers, as they inspire and support each other throughout the process.
-</p>
-<p>
-Moreover, Share-Story's commitment to diversity and inclusivity is evident in its efforts to provide multilingual support and accessibility features, ensuring that storytellers from all walks of life can participate and share their unique perspectives.
-</p>
-<div id="img-center">
-<img width="300" src="1690729023567.jpg" />
-</div>
-<p>
-As the company grew, it also forged partnerships with various non-profit organizations, using storytelling as a powerful tool to raise awareness about important social and environmental issues. Through collaborative initiatives, Share-Story aimed to create a positive impact on communities worldwide.
-</p>
-<p>
-With a rapidly expanding user base and a vibrant community of storytellers, Share-Story quickly became a hub for inspiration, empathy, and connection. It had become more than just a platform; it had evolved into a movement that celebrated the human experience and the power of storytelling to bridge gaps and build meaningful relationships.
-</p>
-<div id="img-center">
-<img width="300" src="344100.jpg" />
-</div>
-<p>
-The success of Share-Story not only inspired countless individuals to explore their creative side but also garnered recognition from industry leaders and accolades from prestigious tech and innovation forums. With its unwavering dedication to storytelling's transformative potential, Share-Story continued to grow and evolve, leaving a significant mark on the digital landscape as the go-to platform for authentic, inspiring, and diverse stories from around the globe.
-</p>
+    <div class="button-group">
+        <button onclick="window.location.href='explore'">Explore</button>
+        <button onclick="window.location.href='add_story'">Add Your Story</button>
+    </div>
+    <div class="container">
+        <p>"Share-Story" is an innovative platform that revolutionizes the way people connect and share their stories with the world. Express yourself and create meaningful connections through storytelling.</p>
+        <img src="img1.jpg" alt="Illustration of a storytelling app in action">
+    </div>
+    <hr />
+    <div class="container">
+        <img src="img2.jpg" alt="Thematic community collaboration visual">
+        <p>Join thematic communities to engage with like-minded storytellers, collaborate on creative projects, and provide feedback to others.</p>
+    </div>
+    <hr />
+    <div class="container">
+        <p>Participate in "Story Challenges" to unleash your creativity and win global recognition for your storytelling skills.</p>
+        <img src="img3.jpg" alt="A creative challenge visual with users competing">
+    </div>
+    <div class="button-group">
+        <button onclick="window.location.href='explore'">Explore</button>
+        <button onclick="window.location.href='add_story'">Add Your Story</button>
+    </div>
     <footer>
-      <b>share story</b>  copyright ©2023-2024
+        <p><b>Share Story</b> &copy; 2023-2024. <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
     </footer>
-  </body>
+
+</body>
+
 </html>
